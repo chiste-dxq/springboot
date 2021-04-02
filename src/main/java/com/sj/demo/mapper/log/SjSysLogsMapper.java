@@ -13,4 +13,6 @@ public interface SjSysLogsMapper {
     int insert(SjSysLogs sysLogs);
 
     int update(SjSysLogs sysLogs);
+
+    SjSysLogs getSjSysLogsById(Integer id);
 }
