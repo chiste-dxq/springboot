@@ -11,4 +11,6 @@ import com.sj.demo.domain.SjSysLogs;
 public interface SjSysLogsMapper {
 
     int insert(SjSysLogs sysLogs);
+
+    int update(SjSysLogs sysLogs);
 }
