@@ -7,6 +7,8 @@ package com.sj.demo.controller;
  **/
 
 import com.sj.demo.common.annotation.Log;
+import com.sj.demo.common.domain.ResultMap;
+import com.sj.demo.common.util.ResultUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +25,7 @@ public class TestController {
 
     @PostMapping("/test")
     @Log( title="测试")
-    public void test() throws Exception {
-        throw new Exception("test");
+    public ResultMap<String> test() throws Exception {
+        return ResultUtil.success("测试成功");
     }
 }
