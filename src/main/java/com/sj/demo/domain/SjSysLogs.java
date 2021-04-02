@@ -19,4 +19,5 @@ public class SjSysLogs {
     private String function;
     private int type;
     private Date createDate;
+    private String ip;
 }

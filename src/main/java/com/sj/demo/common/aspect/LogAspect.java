@@ -74,6 +74,7 @@ public class LogAspect {
             SjSysLogs sysLogs = new SjSysLogs();
             sysLogs.setClassName(className);
             sysLogs.setFunction(methodName);
+            sysLogs.setIp("");
             getControllerMethodDescription(controllerLog,sysLogs);
             sjSysLogsService.insert(sysLogs);
         }

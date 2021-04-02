@@ -6,6 +6,7 @@ import com.sj.demo.server.log.SjSysLogsService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /*
  * @Author: daixq
@@ -21,5 +22,10 @@ public class SjSysLogsServiceImpl implements SjSysLogsService {
     @Override
     public int insert(SjSysLogs sysLogs) {
         return mapper.insert(sysLogs);
+    }
+
+    @Override
+    public List<SjSysLogs> querySjSysLogs(SjSysLogs logs) {
+        return mapper.querySjSysLogs(logs);
     }
 }

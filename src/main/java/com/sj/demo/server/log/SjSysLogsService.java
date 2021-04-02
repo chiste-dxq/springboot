@@ -2,6 +2,8 @@ package com.sj.demo.server.log;
 
 import com.sj.demo.domain.SjSysLogs;
 
+import java.util.List;
+
 /*
  * @Author: daixq
  * @Date: 2021/4/2 14:41
@@ -10,4 +12,6 @@ import com.sj.demo.domain.SjSysLogs;
 public interface SjSysLogsService {
 
     int insert(SjSysLogs sysLogs);
+
+    List<SjSysLogs> querySjSysLogs(SjSysLogs logs);
 }

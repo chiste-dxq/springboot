@@ -3,8 +3,52 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sj.demo.mapper.log.SjSysLogsMapper">
+    
+    <resultMap id="SjSysLogs" type="com.sj.demo.domain.SjSysLogs">
+        <id     property="id"        column="id"       />
+        <result property="className"      column="class_name"     />
+        <result property="level"      column="level"     />
+        <result property="logger"      column="logger"     />
+        <result property="message"        column="message"        />
+        <result property="function"      column="function"     />
+        <result property="type"    column="type"   />
+        <result property="createDate"      column="create_date"     />
+        <result property="ip"    column="ip"   />
+    </resultMap>
 
-    <insert id="insert" parameterType="com.sj.demo.domain.SjSysLogs" useGeneratedKeys="true" keyProperty="id">
+    <sql id="selectSjSysLogs">
+        select id,class_name,`level`,logger,message,`function`,`type`,create_date
+        from sj_sys_logs
+    </sql>
+    
+    <select id="querySjSysLogs" parameterType="com.sj.demo.domain.SjSysLogs" resultMap="SjSysLogs">
+        <include refid="selectSjSysLogs"/>
+        <where>
+            <if test="id != null and id != 0">
+                AND id=#{id}
+            </if>
+            <if test="className != null and className != ''">
+                AND class_name=#{className}
+            </if>
+            <if test="level != null and level != ''">
+                AND `level`=#{level}
+            </if>
+            <if test="logger != null and logger != ''">
+                AND logger=#{logger}
+            </if>
+            <if test="message != null and message != ''">
+                AND message=#{message}
+            </if>
+            <if test="function != null and function != ''">
+                AND `function`=#{function}
+            </if>
+            <if test="type != null">
+                AND `type`= #{type}
+            </if>
+        </where>
+    </select>
+
+    <insert id="insert" parameterType="SjSysLogs" useGeneratedKeys="true" keyProperty="id">
         insert into sj_sys_logs(
         <if test="id != null ">id,</if>
         <if test="className != null and className != ''">class_name,</if>
