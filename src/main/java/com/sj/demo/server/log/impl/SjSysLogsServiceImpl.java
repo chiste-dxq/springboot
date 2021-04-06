@@ -1,6 +1,6 @@
 package com.sj.demo.server.log.impl;
 
-import com.sj.demo.domain.SjSysLogs;
+import com.sj.demo.domain.log.SjSysLogs;
 import com.sj.demo.mapper.log.SjSysLogsMapper;
 import com.sj.demo.server.log.SjSysLogsService;
 import org.springframework.stereotype.Service;

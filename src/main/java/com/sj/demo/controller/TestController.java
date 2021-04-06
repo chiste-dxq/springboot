@@ -4,7 +4,7 @@ import com.sj.demo.common.annotation.Log;
 import com.sj.demo.common.domain.ResultMap;
 import com.sj.demo.common.enums.BusinessType;
 import com.sj.demo.common.util.ResultUtils;
-import com.sj.demo.domain.SjSysLogs;
+import com.sj.demo.domain.log.SjSysLogs;
 import com.sj.demo.server.log.SjSysLogsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,6 +1,6 @@
 package com.sj.demo.server.log;
 
-import com.sj.demo.domain.SjSysLogs;
+import com.sj.demo.domain.log.SjSysLogs;
 
 import java.util.List;
 

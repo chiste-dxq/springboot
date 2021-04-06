@@ -1,4 +1,4 @@
-package com.sj.demo.domain;
+package com.sj.demo.domain.log;
 
 import lombok.Data;
 

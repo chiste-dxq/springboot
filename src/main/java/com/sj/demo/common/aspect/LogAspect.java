@@ -1,7 +1,7 @@
 package com.sj.demo.common.aspect;
 
 import com.sj.demo.common.annotation.Log;
-import com.sj.demo.domain.SjSysLogs;
+import com.sj.demo.domain.log.SjSysLogs;
 import com.sj.demo.server.log.SjSysLogsService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;

@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sj.demo.mapper.log.SjSysLogsMapper">
     
-    <resultMap id="SjSysLogs" type="com.sj.demo.domain.SjSysLogs">
+    <resultMap id="SjSysLogs" type="com.sj.demo.domain.log.SjSysLogs">
         <id     property="id"        column="id"       />
         <result property="className"      column="class_name"     />
         <result property="level"      column="level"     />
@@ -21,7 +21,7 @@
         from sj_sys_logs
     </sql>
     
-    <select id="querySjSysLogs" parameterType="com.sj.demo.domain.SjSysLogs" resultMap="SjSysLogs">
+    <select id="querySjSysLogs" parameterType="com.sj.demo.domain.log.SjSysLogs" resultMap="SjSysLogs">
         <include refid="selectSjSysLogs"/>
         <where>
             <if test="id != null and id != 0">
