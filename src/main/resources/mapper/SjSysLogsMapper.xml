@@ -21,7 +21,7 @@
         from sj_sys_logs
     </sql>
     
-    <select id="querySjSysLogs" parameterType="com.sj.demo.domain.log.SjSysLogs" resultMap="SjSysLogs">
+    <select id="querySjSysLogs" parameterType="com.sj.demo.domain.log.vo.SjSysLogsListVO" resultMap="SjSysLogs">
         <include refid="selectSjSysLogs"/>
         <where>
             <if test="id != null and id != 0">

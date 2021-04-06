@@ -1,6 +1,7 @@
 package com.sj.demo.server.log;
 
 import com.sj.demo.domain.log.SjSysLogs;
+import com.sj.demo.domain.log.vo.SjSysLogsListVO;
 
 import java.util.List;
 
@@ -13,5 +14,5 @@ public interface SjSysLogsService {
 
     int insert(SjSysLogs sysLogs);
 
-    List<SjSysLogs> querySjSysLogs(SjSysLogs logs);
+    List<SjSysLogs> querySjSysLogs(SjSysLogsListVO logs);
 }

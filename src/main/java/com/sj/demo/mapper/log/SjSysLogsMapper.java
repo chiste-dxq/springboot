@@ -1,6 +1,7 @@
 package com.sj.demo.mapper.log;
 
 import com.sj.demo.domain.log.SjSysLogs;
+import com.sj.demo.domain.log.vo.SjSysLogsListVO;
 
 import java.util.List;
 
@@ -18,5 +19,5 @@ public interface SjSysLogsMapper {
 
     SjSysLogs getSjSysLogsById(Integer id);
 
-    List<SjSysLogs> querySjSysLogs(SjSysLogs logs);
+    List<SjSysLogs> querySjSysLogs(SjSysLogsListVO logs);
 }

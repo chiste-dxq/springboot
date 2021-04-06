@@ -1,10 +1,14 @@
 package com.sj.demo.controller;
 
+import com.github.pagehelper.PageHelper;
 import com.sj.demo.common.annotation.Log;
+import com.sj.demo.common.base.BaseController;
+import com.sj.demo.common.domain.PageVo;
 import com.sj.demo.common.domain.ResultMap;
 import com.sj.demo.common.enums.BusinessType;
 import com.sj.demo.common.util.ResultUtils;
 import com.sj.demo.domain.log.SjSysLogs;
+import com.sj.demo.domain.log.vo.SjSysLogsListVO;
 import com.sj.demo.server.log.SjSysLogsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +26,7 @@ import java.util.List;
 @RequestMapping("/api/test")
 @RestController
 @Slf4j
-public class TestController {
+public class TestController extends BaseController {
 
     @Resource
     private SjSysLogsService sjSysLogsService;
@@ -35,7 +39,8 @@ public class TestController {
 
     @PostMapping("/query")
     @Log( title="测试分页" ,businessType = BusinessType.OTHER)
-    public ResultMap<List<SjSysLogs>> query( SjSysLogs sysLogs) throws Exception {
-        return ResultUtils.success(sjSysLogsService.querySjSysLogs(sysLogs));
+    public PageVo query(SjSysLogsListVO sysLogs) throws Exception {
+        PageHelper.startPage(sysLogs.getPageNum(),sysLogs.getPageSize());
+        return getDataTable(sjSysLogsService.querySjSysLogs(sysLogs));
     }
 }

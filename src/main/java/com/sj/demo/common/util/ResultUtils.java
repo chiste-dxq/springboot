@@ -9,9 +9,9 @@ import com.sj.demo.common.domain.ResultMap;
  **/
 public class ResultUtils {
 
-    private static Integer SUCCESS_CODE = 200;
-    private static String DEFAULT_SUCCESS_MESSAGE = "请求成功";
-    private static String DEFAULT_FAILED_MESSAGE = "请求失败";
+    public static Integer SUCCESS_CODE = 200;
+    public static String DEFAULT_SUCCESS_MESSAGE = "请求成功";
+    public static String DEFAULT_FAILED_MESSAGE = "请求失败";
 
     /**
      * 带参请求成功返回
