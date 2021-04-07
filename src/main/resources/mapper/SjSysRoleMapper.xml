@@ -18,17 +18,6 @@
     -->
     id, role_code, role_name, role_group_id, role_sort, is_delete
   </sql>
-  <resultMap id="BaseResultMap" type="com.sj.demo.domain.role.SjSysRole">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
-    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
-    <result column="role_group_id" jdbcType="INTEGER" property="roleGroupId" />
-    <result column="role_sort" jdbcType="INTEGER" property="roleSort" />
-    <result column="is_delete" jdbcType="BIT" property="delete" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, role_code, role_name, role_group_id, role_sort, is_delete
-  </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -120,55 +109,4 @@
       is_delete = #{delete,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <resultMap id="BaseResultMap" type="com.sj.demo.domain.role.SjSysRole">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
-    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
-    <result column="role_group_id" jdbcType="INTEGER" property="roleGroupId" />
-    <result column="role_sort" jdbcType="INTEGER" property="roleSort" />
-    <result column="is_delete" jdbcType="BIT" property="delete" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    id, role_code, role_name, role_group_id, role_sort, is_delete
-  </sql>
-  <resultMap id="BaseResultMap" type="com.sj.demo.domain.role.SjSysRole">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
-    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
-    <result column="role_group_id" jdbcType="INTEGER" property="roleGroupId" />
-    <result column="role_sort" jdbcType="INTEGER" property="roleSort" />
-    <result column="is_delete" jdbcType="BIT" property="delete" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    id, role_code, role_name, role_group_id, role_sort, is_delete
-  </sql>
-  <resultMap id="BaseResultMap" type="com.sj.demo.domain.role.SjSysRole">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
-    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
-    <result column="role_group_id" jdbcType="INTEGER" property="roleGroupId" />
-    <result column="role_sort" jdbcType="INTEGER" property="roleSort" />
-    <result column="is_delete" jdbcType="BIT" property="delete" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    id, role_code, role_name, role_group_id, role_sort, is_delete
-  </sql>
 </mapper>

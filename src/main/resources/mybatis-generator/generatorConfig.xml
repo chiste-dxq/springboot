@@ -95,8 +95,8 @@
         </javaClientGenerator>
 
 <!--        &lt;!&ndash;生成service,serviceImpl&ndash;&gt;-->
-<!--        <javaServiceGenerator targetPackage="com.sj.demo.server.sys.role" targetProject="src/main/java"-->
-<!--                              implementationPackage="com.sj.demo.server.sys.role.impl">-->
+<!--        <javaServiceGenerator targetPackage="com.sj.demo.service.sys.role" targetProject="src/main/java"-->
+<!--                              implementationPackage="com.sj.demo.service.sys.role.impl">-->
 <!--        </javaServiceGenerator>-->
 
         <!-- 选择一个table来生成相关文件，可以有一个或多个table，必须要有table元素

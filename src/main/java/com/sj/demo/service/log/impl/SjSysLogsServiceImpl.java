@@ -1,9 +1,9 @@
-package com.sj.demo.server.log.impl;
+package com.sj.demo.service.log.impl;
 
 import com.sj.demo.domain.log.SjSysLogs;
 import com.sj.demo.domain.log.vo.SjSysLogsListVO;
 import com.sj.demo.mapper.sys.log.SjSysLogsMapper;
-import com.sj.demo.server.log.SjSysLogsService;
+import com.sj.demo.service.log.SjSysLogsService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

@@ -1,4 +1,4 @@
-package com.sj.demo.server.log;
+package com.sj.demo.service.log;
 
 import com.sj.demo.domain.log.SjSysLogs;
 import com.sj.demo.domain.log.vo.SjSysLogsListVO;

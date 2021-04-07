@@ -1,8 +1,9 @@
 package com.sj.demo.common.aspect;
 
+import com.fasterxml.jackson.databind.ser.Serializers;
 import com.sj.demo.common.annotation.Log;
 import com.sj.demo.domain.log.SjSysLogs;
-import com.sj.demo.server.log.SjSysLogsService;
+import com.sj.demo.service.log.SjSysLogsService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -24,7 +25,7 @@ import java.lang.reflect.Method;
  **/
 @Aspect
 @Component
-public class LogAspect {
+public class LogAspect extends BaseAspect {
 
     private static final Logger log = LoggerFactory.getLogger(LogAspect.class);
 
@@ -63,7 +64,7 @@ public class LogAspect {
     protected void handleLog(final JoinPoint joinPoint, final Exception e, Object jsonResult) {
         try {
 
-            Log controllerLog = getAnnotationLog(joinPoint);
+            Log controllerLog = (Log) getAnnotationLog(joinPoint,Log.class);
             if (controllerLog == null)
             {
                 return;
@@ -86,7 +87,6 @@ public class LogAspect {
             exp.printStackTrace();
         }
     }
-
     /**
      * 获取注解中对方法的描述信息 用于Controller层注解
      *
@@ -97,21 +97,6 @@ public class LogAspect {
     public void getControllerMethodDescription(Log log, SjSysLogs operLog) throws Exception {
         operLog.setMessage(log.title());
         operLog.setType(log.businessType().ordinal());
-    }
-
-    /**
-     * 是否存在注解，如果存在就获取
-     */
-    private Log getAnnotationLog(JoinPoint joinPoint) throws Exception {
-        Signature signature = joinPoint.getSignature();
-        MethodSignature methodSignature = (MethodSignature) signature;
-        Method method = methodSignature.getMethod();
-
-        if (method != null)
-        {
-            return method.getAnnotation(Log.class);
-        }
-        return null;
     }
 
 }
