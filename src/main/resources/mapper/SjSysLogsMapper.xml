@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sj.demo.mapper.log.SjSysLogsMapper">
+<mapper namespace="com.sj.demo.mapper.sys.log.SjSysLogsMapper">
     
     <resultMap id="SjSysLogs" type="com.sj.demo.domain.log.SjSysLogs">
         <id     property="id"        column="id"       />

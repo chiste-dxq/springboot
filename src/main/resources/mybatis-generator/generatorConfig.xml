@@ -13,8 +13,7 @@
         <!--<property name="useMapperCommentGenerator" value="false"/>-->
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <!--<property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>-->
-            <property name="mappers" value="xx.common.base.BaseMapper"/>
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
             <property name="caseSensitive" value="true"/>
             <property name="forceAnnotation" value="true"/>
             <property name="beginningDelimiter" value="`"/>
@@ -53,13 +52,12 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-
         <!-- java模型创建器，是必须要的元素
             负责：1，key类（见context的defaultModelType）；2，java类；3，查询类
             targetPackage：生成的类要放的包，真实的包受enableSubPackages属性控制；
             targetProject：目标项目，指定一个存在的目录下，生成的内容会放到指定目录中，如果目录不存在，MBG不会自动建目录
          -->
-        <javaModelGenerator targetPackage="xxx.model"
+        <javaModelGenerator targetPackage="com.sj.demo.domain.dept"
                             targetProject="src/main/java">
             <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
             <property name="enableSubPackages" value="true"/>
@@ -77,11 +75,10 @@
                 所以，如果 javaClientGenerator配置中配置了需要生成XML的话，这个元素就必须配置
             targetPackage/targetProject:同javaModelGenerator
          -->
-        <sqlMapGenerator targetPackage="mybatis.generator" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
-
 
         <!-- 对于mybatis来说，即生成Mapper接口，注意，如果没有配置该元素，那么默认不会生成Mapper接口
             targetPackage/targetProject:同javaModelGenerator
@@ -91,18 +88,23 @@
                 3，XMLMAPPER：会生成Mapper接口，接口完全依赖XML；
             注意，如果context是MyBatis3Simple：只支持ANNOTATEDMAPPER和XMLMAPPER
         -->
-        <javaClientGenerator targetPackage="xxx.mapper.generator" type="XMLMAPPER"
+        <javaClientGenerator targetPackage="com.sj.demo.mapper.sys.dept" type="XMLMAPPER"
                              targetProject="src/main/java">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
+
+<!--        &lt;!&ndash;生成service,serviceImpl&ndash;&gt;-->
+<!--        <javaServiceGenerator targetPackage="com.sj.demo.server.sys.role" targetProject="src/main/java"-->
+<!--                              implementationPackage="com.sj.demo.server.sys.role.impl">-->
+<!--        </javaServiceGenerator>-->
 
         <!-- 选择一个table来生成相关文件，可以有一个或多个table，必须要有table元素
             tableName（必要）：要生成对象的表名；
             domainObjectName 给表对应的 model 起名字
             注意：大小写敏感问题。
          -->
-        <table tableName="sj_sys_user" domainObjectName="SjSysUser"
+        <table tableName="sj_sys_dept" domainObjectName="SjSysDept"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">

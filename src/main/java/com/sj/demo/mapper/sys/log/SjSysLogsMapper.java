@@ -1,4 +1,4 @@
-package com.sj.demo.mapper.log;
+package com.sj.demo.mapper.sys.log;
 
 import com.sj.demo.domain.log.SjSysLogs;
 import com.sj.demo.domain.log.vo.SjSysLogsListVO;

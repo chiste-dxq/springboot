@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sj.demo.mapper.sys.role.SjSysRoleMapper">
+  <resultMap id="BaseResultMap" type="com.sj.demo.domain.role.SjSysRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_group_id" jdbcType="INTEGER" property="roleGroupId" />
+    <result column="role_sort" jdbcType="INTEGER" property="roleSort" />
+    <result column="is_delete" jdbcType="BIT" property="isdelete" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, role_code, role_name, role_group_id, role_sort, is_delete
+  </sql>
+  <resultMap id="BaseResultMap" type="com.sj.demo.domain.role.SjSysRole">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_group_id" jdbcType="INTEGER" property="roleGroupId" />
+    <result column="role_sort" jdbcType="INTEGER" property="roleSort" />
+    <result column="is_delete" jdbcType="BIT" property="delete" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, role_code, role_name, role_group_id, role_sort, is_delete
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sj_sys_role
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sj_sys_role
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sj.demo.domain.role.SjSysRole">
+    insert into sj_sys_role (id, role_code, role_name, 
+      role_group_id, role_sort, is_delete
+      )
+    values (#{id,jdbcType=INTEGER}, #{roleCode,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}, 
+      #{roleGroupId,jdbcType=INTEGER}, #{roleSort,jdbcType=INTEGER}, #{delete,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sj.demo.domain.role.SjSysRole">
+    insert into sj_sys_role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="roleCode != null">
+        role_code,
+      </if>
+      <if test="roleName != null">
+        role_name,
+      </if>
+      <if test="roleGroupId != null">
+        role_group_id,
+      </if>
+      <if test="roleSort != null">
+        role_sort,
+      </if>
+      <if test="delete != null">
+        is_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="roleCode != null">
+        #{roleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="roleName != null">
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleGroupId != null">
+        #{roleGroupId,jdbcType=INTEGER},
+      </if>
+      <if test="roleSort != null">
+        #{roleSort,jdbcType=INTEGER},
+      </if>
+      <if test="delete != null">
+        #{delete,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sj.demo.domain.role.SjSysRole">
+    update sj_sys_role
+    <set>
+      <if test="roleCode != null">
+        role_code = #{roleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="roleName != null">
+        role_name = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleGroupId != null">
+        role_group_id = #{roleGroupId,jdbcType=INTEGER},
+      </if>
+      <if test="roleSort != null">
+        role_sort = #{roleSort,jdbcType=INTEGER},
+      </if>
+      <if test="delete != null">
+        is_delete = #{delete,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sj.demo.domain.role.SjSysRole">
+    update sj_sys_role
+    set role_code = #{roleCode,jdbcType=VARCHAR},
+      role_name = #{roleName,jdbcType=VARCHAR},
+      role_group_id = #{roleGroupId,jdbcType=INTEGER},
+      role_sort = #{roleSort,jdbcType=INTEGER},
+      is_delete = #{delete,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.sj.demo.domain.role.SjSysRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_group_id" jdbcType="INTEGER" property="roleGroupId" />
+    <result column="role_sort" jdbcType="INTEGER" property="roleSort" />
+    <result column="is_delete" jdbcType="BIT" property="delete" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, role_code, role_name, role_group_id, role_sort, is_delete
+  </sql>
+  <resultMap id="BaseResultMap" type="com.sj.demo.domain.role.SjSysRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_group_id" jdbcType="INTEGER" property="roleGroupId" />
+    <result column="role_sort" jdbcType="INTEGER" property="roleSort" />
+    <result column="is_delete" jdbcType="BIT" property="delete" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, role_code, role_name, role_group_id, role_sort, is_delete
+  </sql>
+  <resultMap id="BaseResultMap" type="com.sj.demo.domain.role.SjSysRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_group_id" jdbcType="INTEGER" property="roleGroupId" />
+    <result column="role_sort" jdbcType="INTEGER" property="roleSort" />
+    <result column="is_delete" jdbcType="BIT" property="delete" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, role_code, role_name, role_group_id, role_sort, is_delete
+  </sql>
+</mapper>
