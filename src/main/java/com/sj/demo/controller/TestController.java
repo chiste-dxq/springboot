@@ -7,7 +7,6 @@ import com.sj.demo.common.domain.PageVo;
 import com.sj.demo.common.domain.ResultMap;
 import com.sj.demo.common.enums.BusinessType;
 import com.sj.demo.common.util.ResultUtils;
-import com.sj.demo.domain.log.SjSysLogs;
 import com.sj.demo.domain.log.vo.SjSysLogsListVO;
 import com.sj.demo.server.log.SjSysLogsService;
 import lombok.extern.slf4j.Slf4j;
@@ -16,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.List;
-
 /*
  * @Author: daixq
  * @Date: 2021/4/2 10:54
@@ -42,5 +39,9 @@ public class TestController extends BaseController {
     public PageVo query(SjSysLogsListVO sysLogs) throws Exception {
         PageHelper.startPage(sysLogs.getPageNum(),sysLogs.getPageSize());
         return getDataTable(sjSysLogsService.querySjSysLogs(sysLogs));
+    }
+
+    public static void main(String[] args) {
+
     }
 }
