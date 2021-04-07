@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-@ServletComponentScan(basePackages = {"com.sj.demo.common.filter"})
+//@ServletComponentScan(basePackages = {"com.sj.demo.common.filter"}) //有webFilter时连用
 @MapperScan(value="com.sj.demo.mapper.*")
 public class DemoApplication {
 
