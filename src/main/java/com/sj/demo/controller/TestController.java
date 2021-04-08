@@ -11,7 +11,9 @@ import com.sj.demo.common.utils.ResultUtils;
 import com.sj.demo.domain.log.vo.SjSysLogsListVO;
 import com.sj.demo.domain.user.SjSysUser;
 import com.sj.demo.service.log.SjSysLogsService;
+import com.sj.demo.service.sys.TableService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -33,6 +35,9 @@ public class TestController extends BaseController {
     @Resource
     private SjSysLogsService sjSysLogsService;
 
+    @Resource
+    private TableService tableService;
+
     @RequestMapping("/test")
     @Log( title="测试" ,businessType = BusinessType.INSERT)
     public ResultMap<String> test(@RequestBody(required = false) JsonRequestBody<Map<String, Object>> requestBody,
@@ -53,9 +58,5 @@ public class TestController extends BaseController {
     public PageVo query(SjSysLogsListVO sysLogs) throws Exception {
         PageHelper.startPage(sysLogs.getPageNum(),sysLogs.getPageSize());
         return getDataTable(sjSysLogsService.querySjSysLogs(sysLogs));
-    }
-
-    public static void main(String[] args) {
-
     }
 }

@@ -24,4 +24,14 @@ public class SjSysUserServiceImpl implements SjSysUserService {
     public List<SjSysUser> queryUser(SjSysUserSearchVo vo) {
         return sjSysUserMapper.queryUser(vo);
     }
+
+    @Override
+    public int insert(SjSysUser sjSysUser) {
+        return sjSysUserMapper.insert(sjSysUser);
+    }
+
+    @Override
+    public int update(SjSysUser sjSysUser) {
+        return sjSysUserMapper.update(sjSysUser);
+    }
 }

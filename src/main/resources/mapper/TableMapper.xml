@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sj.demo.mapper.work.TableMapper" >
+
+  <select id="queryTable" parameterType="java.lang.String" resultType="com.sj.demo.common.domain.TableVo">
+    SELECT
+      table_name tableName,
+      table_comment tableComment
+    FROM
+      information_schema.TABLES
+    WHERE
+      table_schema = 'springjava'
+      <if test="prefix!=null and prefix!=''">
+        AND table_name like CONCAT(#{prefix},'%')
+      </if>
+
+  </select>
+</mapper>

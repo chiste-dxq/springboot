@@ -75,7 +75,7 @@ public class LogAspect extends BaseAspect {
             SjSysLogs sysLogs = new SjSysLogs();
             sysLogs.setClassName(className);
             sysLogs.setFunction(methodName);
-            sysLogs.setIp("");
+            sysLogs.setIp(System.getProperties().getOrDefault("url","0.0.0.0").toString());
             getControllerMethodDescription(controllerLog,sysLogs);
             sjSysLogsService.insert(sysLogs);
         }

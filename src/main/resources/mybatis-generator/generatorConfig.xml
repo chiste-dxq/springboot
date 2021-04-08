@@ -4,7 +4,6 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <!-- 配置生成器 -->
 <generatorConfiguration>
-
     <!--id:必选，上下文id，用于在生成错误时提示-->
     <context id="mysql" targetRuntime="MyBatis3">
 
@@ -19,6 +18,7 @@
             <property name="beginningDelimiter" value="`"/>
             <property name="endingDelimiter" value="`"/>
         </plugin>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
 
         <!-- 对注释进行控制 -->
         <commentGenerator>
@@ -57,7 +57,7 @@
             targetPackage：生成的类要放的包，真实的包受enableSubPackages属性控制；
             targetProject：目标项目，指定一个存在的目录下，生成的内容会放到指定目录中，如果目录不存在，MBG不会自动建目录
          -->
-        <javaModelGenerator targetPackage="com.sj.demo.domain.dept"
+        <javaModelGenerator targetPackage="${generate.domainPackage}"
                             targetProject="src/main/java">
             <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
             <property name="enableSubPackages" value="true"/>
@@ -75,7 +75,7 @@
                 所以，如果 javaClientGenerator配置中配置了需要生成XML的话，这个元素就必须配置
             targetPackage/targetProject:同javaModelGenerator
          -->
-        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="${generate.xmlPackage}" targetProject="src/main/resources">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
@@ -88,7 +88,7 @@
                 3，XMLMAPPER：会生成Mapper接口，接口完全依赖XML；
             注意，如果context是MyBatis3Simple：只支持ANNOTATEDMAPPER和XMLMAPPER
         -->
-        <javaClientGenerator targetPackage="com.sj.demo.mapper.sys.dept" type="XMLMAPPER"
+        <javaClientGenerator targetPackage="${generate.mapperPackage}" type="XMLMAPPER"
                              targetProject="src/main/java">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
@@ -104,7 +104,7 @@
             domainObjectName 给表对应的 model 起名字
             注意：大小写敏感问题。
          -->
-        <table tableName="sj_sys_dept" domainObjectName="SjSysDept"
+        <table tableName="${generate.tableName}" domainObjectName="${generate.entityName}"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">

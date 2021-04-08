@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sj.demo.mapper.work.SjWorkNodeMapper">
+  <resultMap id="BaseResultMap" type="com.sj.demo.domain.work.SjWorkNode">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="node_code" jdbcType="VARCHAR" property="nodeCode" />
+    <result column="node_name" jdbcType="VARCHAR" property="nodeName" />
+    <result column="work_main_id" jdbcType="INTEGER" property="workMainId" />
+    <result column="node_type" jdbcType="VARCHAR" property="nodeType" />
+    <result column="node_sort" jdbcType="INTEGER" property="nodeSort" />
+    <result column="is_delete" jdbcType="BIT" property="delete" />
+    <result column="return_node_id" jdbcType="INTEGER" property="returnNodeId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, node_code, node_name, work_main_id, node_type, node_sort, is_delete, return_node_id
+  </sql>
+</mapper>

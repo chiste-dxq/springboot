@@ -13,4 +13,8 @@ import java.util.List;
 public interface SjSysUserService {
 
     List<SjSysUser> queryUser(SjSysUserSearchVo vo);
+
+    int insert(SjSysUser sjSysUser);
+
+    int update(SjSysUser sjSysUser);
 }

@@ -32,3 +32,12 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+
+#generate
+generate:
+  tableName: sj_work_main
+  entityName: SjWorkMain
+  domainPackage: com.sj.demo.domain.work
+  mapperPackage: com.sj.demo.mapper.work
+  xmlPackage: mapper
+
