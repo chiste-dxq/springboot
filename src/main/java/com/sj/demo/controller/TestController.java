@@ -7,7 +7,7 @@ import com.sj.demo.common.domain.JsonRequestBody;
 import com.sj.demo.common.domain.PageVo;
 import com.sj.demo.common.domain.ResultMap;
 import com.sj.demo.common.enums.BusinessType;
-import com.sj.demo.common.util.ResultUtils;
+import com.sj.demo.common.utils.ResultUtils;
 import com.sj.demo.domain.log.vo.SjSysLogsListVO;
 import com.sj.demo.domain.user.SjSysUser;
 import com.sj.demo.service.log.SjSysLogsService;
