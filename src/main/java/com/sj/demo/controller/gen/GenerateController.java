@@ -45,6 +45,8 @@ public class GenerateController extends BaseController {
     @Value("${generate.entityName}")
     private String entityName;
 
+    private static final String mysql = "mysql";
+
     @Resource
     private TableService tableService;
 
@@ -65,11 +67,11 @@ public class GenerateController extends BaseController {
         } catch (XMLParserException e) {
             e.printStackTrace();
         }
-        config.getContext("mysql").getJavaModelGeneratorConfiguration().setTargetPackage(domainPackage);
-        config.getContext("mysql").getJavaClientGeneratorConfiguration().setTargetPackage(mapperPackage);
-        config.getContext("mysql").getSqlMapGeneratorConfiguration().setTargetPackage(xmlPackage);
-        config.getContext("mysql").getTableConfigurations().get(0).setTableName(tableName);
-        config.getContext("mysql").getTableConfigurations().get(0).setDomainObjectName(entityName);
+        config.getContext(mysql).getJavaModelGeneratorConfiguration().setTargetPackage(domainPackage);
+        config.getContext(mysql).getJavaClientGeneratorConfiguration().setTargetPackage(mapperPackage);
+        config.getContext(mysql).getSqlMapGeneratorConfiguration().setTargetPackage(xmlPackage);
+        config.getContext(mysql).getTableConfigurations().get(0).setTableName(tableName);
+        config.getContext(mysql).getTableConfigurations().get(0).setDomainObjectName(entityName);
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
         MyBatisGenerator myBatisGenerator = null;
         try {
